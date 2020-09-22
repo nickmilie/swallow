@@ -15,7 +15,5 @@ public interface ReportDAO {
     public void deleteReportList();
 
     public void deleteReport(int id);
-/*
-    public void updateReport(int id);
-*/
+
 }

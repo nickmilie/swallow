@@ -9,7 +9,7 @@ import java.util.List;
 public class Person {
 
     @JsonProperty("name")
-    private String name;;
+    private String name;
 
     @JsonProperty("homeworld")
     private String homeWorld;
@@ -45,7 +45,7 @@ public class Person {
     }
 
     public String getUrl() {
-        return url;
+        return "https" + url.substring(4) + "?format=json";
     }
 
     public void setUrl(String url) {

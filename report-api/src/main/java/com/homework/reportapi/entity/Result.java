@@ -1,13 +1,11 @@
 package com.homework.reportapi.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "result")
-//@JsonIgnoreProperties
 public class Result {
 
     @Id
@@ -35,7 +33,7 @@ public class Result {
 
     @ManyToOne(
             cascade = {CascadeType.DETACH, CascadeType.MERGE,
-            CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.REMOVE})/* , CascadeType.REMOVE*/
+            CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.REMOVE})
     @JoinColumn(name = "report_id")
     @JsonBackReference
     private Report report;

@@ -3,13 +3,8 @@ package com.homework.reportapi.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Film {
-
-    //need to add @JsonProperty to nested class to read this object
 
     @JsonProperty("title")
     private String title;

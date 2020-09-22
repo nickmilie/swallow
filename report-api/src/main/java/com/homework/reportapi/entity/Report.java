@@ -1,6 +1,5 @@
 package com.homework.reportapi.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -9,7 +8,6 @@ import java.util.List;
 
 @Entity
 @Table(name="report")
-//@JsonIgnoreProperties
 public class Report {
 
     @Id
@@ -27,7 +25,6 @@ public class Report {
     @OneToMany(orphanRemoval = true,
             mappedBy = "report",
             cascade = {CascadeType.ALL})
-//    @Column(nullable = true)
     @JsonManagedReference
     private List<Result> resultList;
 
@@ -67,19 +64,6 @@ public class Report {
         return resultList;
     }
 
-/*    public void setResultList(List<Result> resultList) {
-        this.resultList=new ArrayList<>();
-
-        //report to result
-        this.resultList = resultList;
-
-        //need to link result to Report
-        //as report linked to result
-        for(Result result : this.resultList){
-            result.setReport(this);
-        }
-
-    }*/
 
     public void addResult(Result result){
         if(resultList==null){

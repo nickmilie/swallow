@@ -34,10 +34,6 @@ public class PeopleListResponse {
         this.count = count;
     }
 
-    /* AAAAAAAAAAAAAAAaaaaAAAAAaaAaaaa
-    * FOUR DAYS
-    * http must be HTTPS !!!!!! S!!!!!!!!! SSSS!!!!*/
-
     public String getNext() {
         if(next != null) {
             return "https" + next.substring(4);
